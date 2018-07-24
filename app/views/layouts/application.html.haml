@@ -8,12 +8,11 @@
 
 %body
 	%nav.navbar.navbar-default
-		.container
-			.navbar-brand= link_to "Liste des placements", root_path
+		.navbar-brand= link_to "Liste des placements", root_path
 
-			%ul.nav.navbar-nav.navbar-right
-				%li= link_to "Nouveau placement", new_placement_path
-				%li= link_to "Se déconnecter", root_path
+		%ul.nav.navbar-nav.navbar-right
+			%li= link_to "Nouveau placement", new_placement_path
+			%li= link_to "Se déconnecter", root_path
 
 	.container
 		- flash.each do |name, msg|

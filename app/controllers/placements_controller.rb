@@ -35,14 +35,14 @@ class PlacementsController < ApplicationController
   
   def detroy
     @placement.destroy
-    redirect_to root_path, notice: "Le placement a bien été supprimé."
+    redirect_to root_path, notice:  "Le placement a bien été supprimé."
   end
   
   
   private 
   
   def placement_params
-    params.require(:placement).permit(:title, :description)
+    params.require(:placement).permit(:title, :description, :image)
   end
   
   def find_placement
