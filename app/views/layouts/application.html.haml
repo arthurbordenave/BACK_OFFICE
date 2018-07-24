@@ -1,0 +1,22 @@
+!!! 5
+%html
+%head
+	%title Placement App
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+
+%body
+	%nav.navbar.navbar-default
+		.container
+			.navbar-brand= link_to "Liste des placements", root_path
+
+			%ul.nav.navbar-nav.navbar-right
+				%li= link_to "Nouveau placement", new_placement_path
+				%li= link_to "Se déconnecter", root_path
+
+	.container
+		- flash.each do |name, msg|
+			= content_tag :div, msg, class: "alert"
+
+		= yield

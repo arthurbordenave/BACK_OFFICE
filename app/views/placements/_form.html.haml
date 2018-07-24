@@ -1,0 +1,14 @@
+= simple_form_for @placement, html: { multipart: true } do |f|
+  - if @placement.errors.any?
+    #errors
+      %p
+        = @placement.errors.count
+        Empeche de publier le formulaire
+      %ul 
+        - @placement.errors.full_messages.each do |msg|
+          %li= msg 
+  .panel-body
+    = f.input :title, input_html: { class: 'form-control' }
+    = f.input :description, input_html: { class: 'form-control' }
+    
+  = f.button :submit, class: "btn btn-sm btn-primary" 

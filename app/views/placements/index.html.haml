@@ -1,0 +1,8 @@
+#placement-index
+  - @placement.each do |placement|
+    %a.placement{ href: @category_name.nil? ? placement_path(placement) : placement_path(id: placement.id, category: @category_name) }
+      %div.placement_title
+        %h2= placement.description
+      %div.placement_company
+        %p= placement.title
+  = link_to "Retour", @category_name.nil? ? root_path : placement_path, class: "btn btn-sm btn-default"
