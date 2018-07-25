@@ -1,6 +1,7 @@
 #placement-index
   - @placement.each do |placement|
     %a.placement{ href: @category_name.nil? ? placement_path(placement) : placement_path(id: placement.id, category: @category_name) }
+      = image_tag placement.image.url(:medium)
       %div.placement_title
         %h2= placement.description
       %div.placement_company
